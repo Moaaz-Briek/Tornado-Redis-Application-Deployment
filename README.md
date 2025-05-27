@@ -343,11 +343,11 @@ This project creates a secure, scalable infrastructure on Google Cloud Platform 
 
 ### Access tornado project using our lb ip address
 
-![access tornado project using our lb](./images/picture1.png)
+![access tornado project using our lb](./images/Picture1.png)
 
 after a minute
 
-![access tornado project using our lb](./images/picture2.png)
+![access tornado project using our lb](./images/Picture2.png)
 
 ## 📖 Usage Instructions
 
