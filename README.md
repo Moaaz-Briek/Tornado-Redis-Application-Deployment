@@ -203,29 +203,41 @@ This project creates a secure, scalable infrastructure on Google Cloud Platform 
 
 ### Step 3: Access Management VM
 
-1. **SSH to the Management VM**
+1.  **SSH to the Management VM**
 
     ```bash
     gcloud compute ssh management-vm --zone=us-central1-a
     ```
 
-2. **Update the system and install tools**
+2.  **Update the system and install tools**
 
-    ```bash
-    # Update OS packages
-    sudo apt-get update && sudo apt-get upgrade -y
+        ```bash
+        # Update OS packages
+        sudo apt-get update && sudo apt-get upgrade -y
 
-    # Install kubectl
-    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+        # Install kubectl
+        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-    # Install Docker
-    sudo apt-get install -y docker.io
-    sudo usermod -aG docker $USER
-    newgrp docker
+        # Install Docker
+        sudo apt-get install -y docker.io
+        sudo usermod -aG docker $USER
+        newgrp docker
 
-    # Install gcloud components
-    sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
+        # Install gcloud components
+
+        ## Add the official Google Cloud SDK repo
+        echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+        ## Import the Google Cloud GPG Key
+        curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
+        ## Update APT and Install the Plugin
+        sudo apt-get update
+        sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+
+    ```
+
     ```
 
 ### Step 4: Configure Cluster Access

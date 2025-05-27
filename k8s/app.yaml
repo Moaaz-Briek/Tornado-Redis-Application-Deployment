@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: python-container
-                  image: us-central1-docker.pkg.dev/moaaz-461013/demo-repo/devops-app
+                  image: us-central1-docker.pkg.dev/moaaz-461013/docker-repo/tornado-app
                   ports:
                       - containerPort: 8000
                   env:
