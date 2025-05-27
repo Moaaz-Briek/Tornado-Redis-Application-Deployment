@@ -1,0 +1,28 @@
+project_id = "PROJECT_ID"
+region     = "us-central1"
+zone       = "us-central1-a"
+
+# Network Configuration
+vpc_name               = "vpc"
+management_subnet_name = "mgmt-subnet"
+restricted_subnet_name = "restricted-subnet"
+management_subnet_cidr = "192.168.10.0/24"
+restricted_subnet_cidr = "192.168.20.0/24"
+internal_cidr          = "192.168.0.0/16"
+
+# VM Configuration
+vm_name                 = "management-vm"
+vm_service_account_name = "vm-service-account"
+vm_internal_ip          = "192.168.10.100"
+
+# GKE Configuration
+cluster_name             = "gke-cluster"
+gke_service_account_name = "gke-service-account"
+master_cidr              = "172.20.0.0/28"
+node_count               = 2
+
+# Registry Configuration
+repository_name = "docker-repo"
+
+# Security Configuration
+firewall_prefix = "fwp"
