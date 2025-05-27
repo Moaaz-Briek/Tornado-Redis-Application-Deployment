@@ -339,6 +339,16 @@ This project creates a secure, scalable infrastructure on Google Cloud Platform 
     curl http://localhost:8080
     ```
 
+## Tornado project on the fly
+
+### Access tornado project using our lb ip address
+
+![access tornado project using our lb](./images/picture1.png)
+
+after a minute
+
+![access tornado project using our lb](./images/picture2.png)
+
 ## 📖 Usage Instructions
 
 ### Daily Operations
